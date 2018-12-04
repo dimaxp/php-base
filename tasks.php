@@ -84,3 +84,10 @@ function getDay($arr, $lang, $number) {
     return $arr[$lang][$number];
 }
 var_dump(getDay($arr, 'ru', 6));
+
+
+
+
+
+
+
