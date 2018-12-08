@@ -15,7 +15,7 @@
                console.log("xhr response", xhr.responseText);
                responseHandler(xhr.responseText);
            }
-       }
+       };
    }
 
    function responseHandler(response) {

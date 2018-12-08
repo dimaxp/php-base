@@ -2,6 +2,7 @@
 <html>
 <head>
 
+    <script src="js/jquery3.3.1.js"></script>
 </head>
 <body>
 
@@ -17,6 +18,7 @@
         </div>
     </form>
 
-<script src="js/sendForm.js"></script>
+<!--<script src="js/sendForm.js"></script>-->
+<script src="js/jQSendForm.js"></script>
 </body>
 </html>
