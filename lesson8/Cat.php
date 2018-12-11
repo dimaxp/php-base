@@ -15,10 +15,11 @@ class Cat extends Pet
     {
         parent::__construct($cat_name, $cat_age);
         $this->color = $cat_color;
+        $this->type = "Кошка";
     }
 
     // мотоды класса
     public function saySmth(){
-        var_dump("Мяу");
+        var_dump($this->name . " Мяу");
     }
 }
