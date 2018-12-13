@@ -25,5 +25,4 @@ class Human
     {
         return $this->name;
     }
-
 }

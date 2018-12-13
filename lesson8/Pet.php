@@ -31,5 +31,4 @@ class Pet
         var_dump(self::PET_CONST);
         var_dump($this->name . " скушал " . $food->name);
     }
-
 }

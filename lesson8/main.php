@@ -61,8 +61,88 @@ var_dump($human->getPetName());
 var_dump($human);
 
 
+/*класс Operation:
+поля а b
+метод execute() - без реализации */
 
+abstract class Operation{
+    protected $a;
+    protected $b;
 
+    function __construct($a, $b)
+    {
+        $this->a = $a;
+        $this->b = $b;
+    }
+
+    abstract function execute();
+}
+
+/*класс Plus наследник Operation
+переопределить метод execute() написать реализацию */
+class Plus extends Operation {
+    function __construct($a, $b)
+    {
+        parent::__construct($a, $b);
+    }
+
+    public function execute()
+    {
+        return $this->a + $this->b;
+    }
+}
+
+/*класс Minus наследник Operation
+переопределить метод execute() написать реализацию*/
+class Minus extends Operation {
+    function __construct($a, $b)
+    {
+        parent::__construct($a, $b);
+    }
+
+    public function execute()
+    {
+        return $this->a - $this->b;
+    }
+}
+class Division extends Operation{
+    public function div(){
+        return $this->a/$this->b;
+    }
+
+    function execute()
+    {
+        return $this->a/$this->b;
+    }
+}
+/*класс Calculator
+статический метод getInstance($a, $b, $operation) {}
+возвращает экземпляр объекта Plus или Minus
+в зависимости от переданной операции*/
+
+class Calculator {
+    // паттерн фабричный метод
+    public static function getInstance($a, $b, $operation) {
+        if ($operation == "+") {
+            return new Plus($a, $b);
+        }
+        return new Minus($a, $b);
+    }
+}
+
+/*Получить через форму:
+значение a, значение b, операцию
+
+$operation = // создание объекта*/
+$post = $_POST;
+$a = 1;//$post['a'];
+$b = 3; //$post['b'];
+$op = "/"; //$post['operation'];
+$operation = Calculator::getInstance($a, $b, $op);
+$operation->execute();
+
+//написать программу для считывания
+//конфиг файлов xml и txt
 
 
 
